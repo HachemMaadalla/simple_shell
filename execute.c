@@ -6,7 +6,7 @@ int _execute(char **cmd, char **argv)
     child = fork();
     if (child == 0)
     {
-        if (execve(cmd[0], cmd environ) == -1)
+        if (execve(cmd[0], cmd, environ) == -1)
         {
 
             perror(argv[0]);
