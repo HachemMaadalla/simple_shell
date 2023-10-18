@@ -6,7 +6,7 @@ size_t length = 0;
 ssize_t x;
     if (isatty(STDOUT_FILENO))
     {
-        write(STDOUT_FILENO "$ ", 2);
+        write(STDOUT_FILENO, "$ ", 2);
     }
     x = getline(&line, &length, stdin);
     if (x == -1)
