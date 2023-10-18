@@ -16,14 +16,14 @@ char *_strdup(char *str)
 {
 	int len = _strlen(str) + 1;
 	char *dup = malloc(len);
-
+	int i=0;
 	if (dup == NULL)
 	{
 	perror("strdup");
 	exit(EXIT_FAILURE);
 	}
 
-	for (int i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 	{
 	dup[i] = str[i];
 	}
