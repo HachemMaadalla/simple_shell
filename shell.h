@@ -9,8 +9,8 @@
 #define TOK_BUFSIZE 64
 #define TOK_DELIM " \t\r\n\a"
 
-char *readline(void);
+char *read_line(void);
 char **tokenizer(char *line);
-int execute(char *line);
-
+int _execute(char **cmd, char **argv);
+void freearray2D(char **arr);
 #endif /* SHELL_H */
