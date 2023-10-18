@@ -1,17 +1,27 @@
 #include "shell.h"
 
-int main(void)
+int main(int ac, char **argv)
 {
-	char *line;
-	int status;
-
-	do {
-	printf("$ ");
+	char *line = NULL;
+    char **cmd = NULL;
+	int status = 0;
+    (void) ac;
+	while (1)
+    {
 	line = read_line();
-	status = execute(line);
-
-	free(line);
-	} while (status);
-
-	return 0;
+    if (line == NULL)
+    {
+        if (isatty(STDIN_FILENO))
+        {
+            write(STDOUT_FILENO, "\n", 1);
+        }
+        return(status);
+    }
+    cmd = tokenizer(line);
+    if (!cmd)
+    {
+        continue;
+    }
+	status = _execute(cmd, argv);
+    }
 }
