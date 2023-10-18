@@ -5,6 +5,7 @@ int main(int ac, char **argv)
 	char *line = NULL;
     char **cmd = NULL;
 	int status = 0;
+	int idx = 0;
     (void) ac;
 	while (1)
     {
@@ -17,11 +18,12 @@ int main(int ac, char **argv)
         }
         return(status);
     }
+    idx++;
     cmd = tokenizer(line);
     if (!cmd)
     {
         continue;
     }
-	status = _execute(cmd, argv);
+	status = _execute(cmd, argv, idx);
     }
 }
