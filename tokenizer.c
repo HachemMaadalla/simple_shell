@@ -6,7 +6,7 @@ char **tokenizer(char *line)
     char *tmp = NULL;
     char **cmd = NULL;
     int compteur = 0;
-    int i = 0;
+    int j = 0;
     if (!line)
     {
         return(NULL);
