@@ -16,7 +16,7 @@ int _execute(char **cmd, char **argv)
     }
     else
     {
-        waitpid(child &status, 0);
+        waitpid(child, &status, 0);
         freearray2D(cmd);
     }
     return(WEXITSTATUS(status));
