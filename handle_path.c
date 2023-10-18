@@ -16,7 +16,7 @@ char *_getpath(char * cmd)
         {
             if(stat(cmd, &st) == 0)
             {
-                return (_stdup(cmd));
+                return (_strdup(cmd));
             }
             else
             {
