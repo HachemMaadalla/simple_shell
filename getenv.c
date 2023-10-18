@@ -1,11 +1,10 @@
 #include "shell.h"
 char *_getenv(char *var)
 {
-    if (!var) 
-    {
-        return (NULL);
-    }
-    char *current_entry, *name_part, *value, *env;
+    char *current_entry;
+    char *name_part;
+    char *value;
+    char *env;
     int j;
     for (j = 0; environ[j]; j++)
     {
@@ -13,7 +12,7 @@ char *_getenv(char *var)
         name_part = strtok(current_entry, "=");
         if (_strcmp(name_part, var) == 0)
         {
-            value = strktok(NULL, "\n");
+            value = strtok(NULL, "\n");
             env = _strdup(value);
             free(current_entry);
             return(env);

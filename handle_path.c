@@ -1,11 +1,9 @@
 #include "shell.h"
 char *_getpath(char * cmd)
 {
-    if (!cmd) 
-    {
-        return (NULL);
-    }
-    char *path_env, *full_cmd, *dir;
+    char *path_env;
+    char *full_cmd;
+    char *dir;
     struct stat st;
     int i;
     for (i = 0; cmd[i]; i++)
@@ -14,7 +12,7 @@ char *_getpath(char * cmd)
         {
             if(stat(cmd, &st) == 0)
             {
-                return (_stdup(cmd));
+                return (_strdup(cmd));
             }
             else
             {
