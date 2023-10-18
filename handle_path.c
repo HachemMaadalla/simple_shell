@@ -1,11 +1,7 @@
 #include "shell.h"
 char *_getpath(char * cmd)
 {
-    if (!cmd) 
-    {
-        return (NULL);
-    }
-    char path_env;
+    char *path_env;
     char *full_cmd;
     char *dir;
     struct stat st;

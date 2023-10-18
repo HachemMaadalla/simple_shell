@@ -1,11 +1,7 @@
 #include "shell.h"
 char *_getenv(char *var)
 {
-    if (!var) 
-    {
-        return (NULL);
-    }
-    char current_entry;
+    char *current_entry;
     char *name_part;
     char *value;
     char *env;
