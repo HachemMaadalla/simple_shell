@@ -7,7 +7,7 @@ int main(void)
 
 	do {
 	printf("$ ");
-	line = readline();
+	line = read_line();
 	status = execute(line);
 
 	free(line);
