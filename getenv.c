@@ -5,7 +5,7 @@ char *_getenv(char *var)
     {
         return (NULL);
     }
-    char *current_entry;
+    char current_entry;
     char *name_part;
     char *value;
     char *env;

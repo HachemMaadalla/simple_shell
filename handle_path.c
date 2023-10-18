@@ -5,7 +5,7 @@ char *_getpath(char * cmd)
     {
         return (NULL);
     }
-    char *path_env;
+    char path_env;
     char *full_cmd;
     char *dir;
     struct stat st;
